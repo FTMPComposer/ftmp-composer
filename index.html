@@ -10,6 +10,11 @@
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
     /* Layout base para manter footer no fundo */
     html, body {
       height: 100%;
@@ -27,12 +32,12 @@
       top: 0;
       width: 100%;
       background: white;  /*transparent /* Agora transparente para o fundo aparecer */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       z-index: 1000;
-      padding: 15px 15px;
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     /* Título do cabeçalho */
