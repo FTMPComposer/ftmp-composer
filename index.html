@@ -2,84 +2,159 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FTMP Composer</title>
-  <!-- Fonte moderna -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Ícones Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f26e50, #f8e1d6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: #222;
-    }
-
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 500px;
-      width: 90%;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      background: linear-gradient(to bottom, #f26e50, #f8e1d6);
       color: #333;
     }
 
-    p.subtitle {
-      font-size: 1.1em;
-      color: #666;
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #f26e50;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      padding: 100px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 150px;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
       margin-bottom: 30px;
     }
 
     .social a {
-      margin: 0 12px;
-      color: #f26e50;
+      margin: 0 15px;
       font-size: 1.5em;
-      transition: color 0.3s;
+      color: #f26e50;
       text-decoration: none;
     }
 
     .social a:hover {
-      color: #d84c35;
+      color: #c4422e;
     }
 
-    .contact {
-      margin-top: 25px;
-      font-size: 1em;
-      color: #444;
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #fff;
+      color: #555;
+      font-size: 0.9em;
     }
 
-    .contact i {
-      margin-right: 8px;
-      color: #f26e50;
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px 0 0;
+      }
+
+      .hero h2 {
+        font-size: 2em;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1><i class="fas fa-music"></i> FTMP Composer <i class="fas fa-music"></i></h1>
-    <p class="subtitle">Composição | Arranjos | Música Tradicional</p>
 
+  <header>
+    <h1>FTMP Composer</h1>
+    <nav>
+      <a href="#home">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="home" class="section hero">
+    <h2>Composição | Arranjos | Música Tradicional</h2>
+    <p>Música feita com alma e autenticidade.</p>
     <div class="social">
       <a href="https://www.youtube.com/@ftmp.composer/" target="_blank"><i class="fab fa-youtube"></i></a>
       <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
+  </section>
 
-    <div class="contact">
-      <p><i class="fas fa-envelope"></i> ftmp.composer.2021@gmail.com</p>
-    </div>
-  </div>
+  <section id="sobre" class="section">
+    <h2>Sobre Mim</h2>
+    <p>Sou compositor com foco em música tradicional portuguesa, arranjos personalizados e projetos culturais. Com anos de experiência, trago emoção e identidade sonora a cada trabalho.</p>
+  </section>
+
+  <section id="portfolio" class="section">
+    <h2>Portfólio</h2>
+    <p>Brevemente aqui vais encontrar excertos, vídeos e colaborações realizadas. Para já, visita o YouTube oficial!</p>
+    <a href="https://www.youtube.com/@ftmp.composer/" target="_blank">▶️ Visitar canal</a>
+  </section>
+
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <p>Podes entrar em contacto por email para pedidos, colaborações ou apenas dizer olá:</p>
+    <p><strong>Email:</strong> ftmp.composer.2021@gmail.com</p>
+  </section>
+
+  <footer>
+    &copy; 2025 FTMP Composer. Todos os direitos reservados.
+  </footer>
+
 </body>
 </html>
