@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre - FTMP Composer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff0e8;
+      color: #333;
+      padding: 40px;
+    }
+
+    /* Estilo dos links */
+    a {
+      text-decoration: none;
+      color: #f26e50;
+    }
+
+    /* Botão para voltar atrás */
+    .back {
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Link para voltar à página inicial -->
+  <a class="back" href="index.html">← Voltar à Página Inicial</a>
+
+  <h1>Sobre Mim</h1>
+  <p>Sou compositor e arranjador com paixão por música tradicional portuguesa. Desenvolvo projetos que misturam identidade cultural e emoção sonora.</p>
+</body>
+</html>
