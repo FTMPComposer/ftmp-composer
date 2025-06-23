@@ -4,74 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FTMP Composer</title>
+  <!-- Fonte elegante -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Ícones redes sociais -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
-    /* Reset e estilo base */
+    /* Estilo base e reset */
     * {
-      margin: 0;
-      padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to bottom, #f26e50, #f8e1d6);
       color: #333;
-      min-height: 100vh;
     }
 
-    /* Barra de navegação */
+    /* Barra de navegação fixa no topo */
     header {
-      padding: 20px 40px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: transparent; /* Agora transparente para o fundo aparecer */
+      z-index: 1000;
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: transparent; /* Transparente para não cortar o fundo */
     }
 
+    /* Título do cabeçalho */
+    header h1 {
+      font-size: 1.5em;
+      margin: 0;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Estilo dos links do menu */
     nav a {
       margin-left: 20px;
       text-decoration: none;
       color: white;
-      background: #f26e50;
-      padding: 8px 16px;
-      border-radius: 10px;
-      transition: background 0.3s;
+      font-weight: 500;
     }
 
     nav a:hover {
-      background: #c4422e;
+      text-decoration: underline;
     }
 
-    /* Conteúdo principal centrado */
-    main {
-      padding: 60px 40px;
+    /* Secções com espaçamento e limite de largura */
+    .section {
+      padding: 100px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Estilo da secção principal (hero) */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding-top: 160px;
     }
 
-    h1 {
+    .hero h2 {
       font-size: 2.5em;
       margin-bottom: 10px;
     }
 
-    p {
-      margin-bottom: 40px;
+    .hero p {
       font-size: 1.2em;
+      margin-bottom: 30px;
     }
 
-    section {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: left;
-      padding: 40px 20px;
-    }
-
-    h2 {
-      margin-bottom: 10px;
+    /* Redes sociais */
+    .social a {
+      margin: 0 15px;
       font-size: 1.5em;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      text-decoration: none;
     }
-     
+
+    .social a:hover {
+      color: #000;
+    }
+
+    /* Rodapé */
     footer {
       text-align: center;
       padding: 30px;
@@ -79,29 +104,79 @@
       color: #555;
       font-size: 0.9em;
     }
+
+    /* Responsivo para telemóvel */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 10px 0 0;
+      }
+
+      .hero h2 {
+        font-size: 2em;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <!-- Cabeçalho com nome e menu -->
+
+  <!-- Cabeçalho fixo -->
   <header>
-    <div><strong>FTMP Composer</strong></div>
+    <h1>FTMP Composer</h1>
     <nav>
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="portfolio.html">Portfólio</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="#home">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <!-- Conteúdo principal -->
-  <main>
-    <h1>Composição | Arranjos | Música Tradicional</h1>
+  <!-- Secção principal de boas-vindas -->
+  <section id="home" class="section hero">
+    <h2>Composição | Arranjos | Música Tradicional</h2>
     <p>Música feita com alma e autenticidade.</p>
-  </main>
+    <div class="social">
+      <!-- Ligações para redes sociais -->
+      <a href="https://www.youtube.com/@ftmp.composer/" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
 
-  <!-- CopyRight --!>
+  <!-- Secção Sobre -->
+  <section id="sobre" class="section">
+    <h2>Sobre Mim</h2>
+    <p>Sou compositor com foco em música tradicional portuguesa, arranjos personalizados e projetos culturais. Com anos de experiência, trago emoção e identidade sonora a cada trabalho.</p>
+  </section>
+
+  <!-- Secção Portfólio -->
+  <section id="portfolio" class="section">
+    <h2>Portfólio</h2>
+    <p>Brevemente aqui vais encontrar excertos, vídeos e colaborações realizadas. Para já, visita o YouTube oficial!</p>
+    <a href="https://www.youtube.com/@ftmp.composer/" target="_blank">▶️ Visitar canal</a>
+  </section>
+
+  <!-- Secção Contacto -->
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <p>Podes entrar em contacto por email para pedidos, colaborações ou apenas dizer olá:</p>
+    <p><strong>Email:</strong> ftmp.composer.2021@gmail.com</p>
+  </section>
+
+  <!-- Rodapé -->
   <footer>
     &copy; 2025 FTMP Composer. Todos os direitos reservados.
   </footer>
+
 </body>
 </html>
