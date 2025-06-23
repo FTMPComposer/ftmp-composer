@@ -1,52 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt"> <!-- Idioma da página -->
+<html lang="pt">
 <head>
-  <meta charset="UTF-8" /> <!-- Codificação de caracteres -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Responsivo -->
-  <title>FTMP Composer</title> <!-- Título no separador -->
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FTMP Composer</title>
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Ícones Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;                             /* Tipo de letra */
-      background: linear-gradient(to bottom, #f26e50, #f5d6c6);   /* Fundo com gradiente */
-      color: #222;                                                /* Cor do texto */
-      text-align: center;                                         /* Texto centrado */
-      padding: 40px;                                              /* Espaço interior */
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f26e50, #f8e1d6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #222;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
     }
 
     h1 {
-      font-size: 3em;         /* Tamanho grande */
-      margin-bottom: 0.2em;   /* Margem inferior */
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p.subtitle {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 30px;
     }
 
     .social a {
-      margin: 0 10px;          /* Espaço entre links */
-      color: #000;             /* Cor dos links */
-      text-decoration: none;   /* Sem sublinhado */
+      margin: 0 12px;
+      color: #f26e50;
+      font-size: 1.5em;
+      transition: color 0.3s;
+      text-decoration: none;
+    }
+
+    .social a:hover {
+      color: #d84c35;
     }
 
     .contact {
-      margin-top: 30px; /* Espaço acima */
-      font-size: 1.1em; /* Tamanho do texto */
+      margin-top: 25px;
+      font-size: 1em;
+      color: #444;
+    }
+
+    .contact i {
+      margin-right: 8px;
+      color: #f26e50;
     }
   </style>
 </head>
-
 <body>
-  <h1>🎵 FTMP Composer 🎵</h1> <!-- Título -->
-  <p>Composição | Arranjos | Música Tradicional</p> <!-- Descrição -->
+  <div class="container">
+    <h1><i class="fas fa-music"></i> FTMP Composer <i class="fas fa-music"></i></h1>
+    <p class="subtitle">Composição | Arranjos | Música Tradicional</p>
 
-  <div class="social">
-    <p>
-      🔗 
-      <a href="https://www.youtube.com/@ftmp.composer/" target="_blank">YouTube</a> |
-      <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
-      <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-    </p>
-  </div>
+    <div class="social">
+      <a href="https://www.youtube.com/@ftmp.composer/" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
 
-  <div class="contact">
-    📧 Email: ftmp.composer.2021@gmail.com <!-- Contacto por email -->
+    <div class="contact">
+      <p><i class="fas fa-envelope"></i> ftmp.composer.2021@gmail.com</p>
+    </div>
   </div>
 </body>
 </html>
