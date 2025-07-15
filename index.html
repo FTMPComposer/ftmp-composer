@@ -167,31 +167,6 @@
     opacity: 1;
   }
   </style>
-
-
-  <script>
-    const backToTopButton = document.getElementById('backToTop');
-  
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  
-    // Mostrar botão só quando scroll passar de 100px
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        backToTopButton.style.display = 'block';
-      } else {
-        backToTopButton.style.display = 'none';
-      }
-    });
-  
-    // Esconder botão inicialmente
-    backToTopButton.style.display = 'none';
-  </script>
-  
 </head>
 
 <body>
@@ -260,6 +235,28 @@
   <!-- Botão voltar ao topo -->
   <button id="backToTop" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
 
+  <script>
+    const backToTopButton = document.getElementById('backToTop');
+  
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  
+    // Mostrar botão só quando scroll passar de 100px
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+  
+    // Esconder botão inicialmente
+    backToTopButton.style.display = 'none';
+  </script>
 
 </body>
 </html>
