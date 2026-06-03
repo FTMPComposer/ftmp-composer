@@ -1,1 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FTMP Composer</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
+    /* Reset e Layout Base */
+    html, body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f7a68d 0%, #fcdcd0 50%, #f8e1d6 100%);
+      color: #2c2c2c;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    } 
+
+    /* Barra de Navegação Premium */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      z-index: 1000;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    /* Logótipo / Nome do Artista */
+    header h1 {
+      font-family: 'Marcellus', serif;
+      font-size: 1.6em;
+      margin: 0;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #1a1a1a;
+    }
+
+    /* Menu de Navegação */
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 0.95em;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #f26e50;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f26e50;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Conteúdo Principal */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }    
+
+    /* Secção Hero Emocionante e Impactante */
+    .hero {
+      padding: 160px 24px 100px 24px;
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Pequena Tag flutuante de Introdução */
+    .hero-badge {
+      background: rgba(255, 255, 255, 0.4);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: #d1563b;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Título com Fonte Clássica e Imponente */
+    .hero h2 {
+      font-family: 'Marcellus', serif;
+      font-size: 3.8em;
+      margin: 0 0 20px 0;
+      font-weight: 400;
+      line-height: 1.1;
+      color: #1a1a1a;
+      letter-spacing: 1px;
+    }
+
+    /* Copywriting Profissional e Envolvente */
+    .hero p {
+      font-size: 1.25em;
+      line-height: 1.6;
+      margin-bottom: 35px;
+      color: #4a4a4a;
+      max-width: 650px;
+      font-weight: 300;
+    }
+
+    /* Botão de Ação Principal (Call to Action) */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      background: #1a1a1a;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-size: 0.95em;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      margin-bottom: 40px;
+    }
+
+    .cta-button i {
+      margin-right: 10px;
+      font-size: 0.9em;
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #f26e50;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(242, 110, 80, 0.25);
+    }
+
+    .cta-button:hover i {
+      transform: scale(1.1);
+    }
+
+    /* Redes Sociais Centrais Estilizadas */
+    .social-icons {
+      display: flex;
+      gap: 25px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      font-size: 1.4em;
+      color: #1a1a1a;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      opacity: 0.75;
+    }
+
+    .social-icons a:hover {
+      color: #f26e50;
+      transform: translateY(-4px);
+      opacity: 1;
+    }
+
+    /* ==========================================================================
+       RODAPÉ DE ALTA GAMA (MÍNIMO E SIMÉTRICO)
+       ========================================================================== */
+    footer {
+      background: rgba(251, 251, 251, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #666;
+      font-size: 0.85em;
+      padding: 35px 40px;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: table;
+      width: 100%;
+    }
+
+    .footer-column {
+      display: table-cell;
+      width: 33.333%;
+      vertical-align: middle;
+    }
+
+    .footer-left { text-align: left; }
+    .footer-center { text-align: center; }
+    .footer-right { text-align: right; }
+
+    /* Links do Rodapé */
+    .footer-links a {
+      color: #555;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #f26e50;
+    }
+
+    /* Redes Sociais Discretas do Rodapé */
+    .footer-social a {
+      color: #666;
+      font-size: 1.15em;
+      margin-left: 18px;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-social a:hover {
+      color: #f26e50;
+      transform: translateY(-2px);
+    }
+
+    /* Animações */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================================
+       RESPONSIVIDADE INTELIGENTE
+       ========================================================================== */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+
+      nav {
+        margin-top: 14px;
+      }
+
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9em;
+      }
+
+      .hero {
+        padding-top: 140px;
+      }
+
+      .hero h2 {
+        font-size: 2.6em;
+      }
+
+      .hero p {
+        font-size: 1.1em;
+      }
+
+      /* Tabela do rodapé passa a blocos no telemóvel */
+      .footer-column {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      
+      .footer-right {
+        margin-bottom: 0;
+      }
+
+      .footer-social a {
+        margin: 0 12px;
+      }
+    }
+    
+    /* Botão Voltar ao Topo Minimizado */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #1a1a1a;
+      color: white;
+      border: none;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1001;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #backToTop:hover {
+      background-color: #f26e50;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>FTMP Composer</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <main> 
+    <section id="home" class="hero">
+      <div class="hero-badge">Composição & Arranjos</div>
+      <h2>A alma da tradição em som contemporâneo.</h2>
+      <p>
+        Fundindo as raízes e a essência da Música Tradicional com a sofisticação e precisão da escrita moderna. Sonoridades personalizadas criadas com propósito, identidade e rigor artístico.
+      </p>
+      
+      <a href="portfolio.html" class="cta-button">
+        <i class="fas fa-play-circle"></i> Ouvir Portfólio
+      </a>
+      
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@ftmp.composer/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </section>
+  </main> 
+  
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column footer-left">
+        <span>&copy; 2026 FTMP Composer. Todos os direitos reservados.</span>
+      </div>
+      
+      <div class="footer-column footer-center">
+        <div class="footer-links">
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="portfolio.html">Portfólio</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+      </div>
+      
+      <div class="footer-column footer-right">
+        <div class="footer-social">
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@ftmp.composer/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" title="Voltar ao topo"><i class="fas fa-chevron-up"></i></button>
+
+  <script>
+    const backToTopButton = document.getElementById('backToTop');
+  
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 250) {
+        backToTopButton.style.opacity = '1';
+        backToTopButton.style.visibility = 'visible';
+      } else {
+        backToTopButton.style.opacity = '0';
+        backToTopButton.style.visibility = 'hidden';
+      }
+    });
+  </script>
+
+</body>
+</html>
