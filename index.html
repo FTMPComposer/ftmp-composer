@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FTMP Composer</title>
+  <title>FTMP Composer — Website Oficial</title>
   
+  <!-- Fontes Premium de Alta Gama -->
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   
+  <!-- Ícones Profissionais -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
@@ -15,19 +17,15 @@
       scroll-behavior: smooth;
     }
     
-    /* Reset e Layout Base */
-    html, body {
-      min-height: 100vh;
+    body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #f7a68d 0%, #fcdcd0 50%, #f8e1d6 100%);
       color: #2c2c2c;
-      display: flex;
-      flex-direction: column;
       overflow-x: hidden;
-    } 
+    }
 
-    /* Barra de Navegação Premium */
+    /* BARRA DE NAVEGAÇÃO BLUR (GLASSMORPHISM) */
     header {
       position: fixed;
       top: 0;
@@ -35,34 +33,29 @@
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
       border-bottom: 1px solid rgba(255, 255, 255, 0.4);
       z-index: 1000;
       padding: 18px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: all 0.3s ease;
     }
 
-    /* Logótipo / Nome do Artista */
     header h1 {
       font-family: 'Marcellus', serif;
-      font-size: 1.6em;
+      font-size: 1.5em;
       margin: 0;
       font-weight: 400;
       letter-spacing: 2px;
-      color: #1a1a1a;
     }
 
-    /* Menu de Navegação */
     nav a {
       margin-left: 25px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
       font-size: 0.95em;
-      letter-spacing: 0.5px;
       transition: color 0.3s ease;
       position: relative;
     }
@@ -78,35 +71,20 @@
       transition: width 0.3s ease;
     }
 
-    nav a:hover {
-      color: #f26e50;
-    }
+    nav a:hover { color: #f26e50; }
+    nav a:hover::after { width: 100%; }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    /* Conteúdo Principal */
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }    
-
-    /* Secção Hero Emocionante e Impactante */
+    /* SECÇÃO 1: INÍCIO (HERO) */
     .hero {
-      padding: 160px 24px 100px 24px;
-      max-width: 850px;
-      margin: 0 auto;
-      text-align: center;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      padding: 120px 24px 60px 24px;
     }
 
-    /* Pequena Tag flutuante de Introdução */
     .hero-badge {
       background: rgba(255, 255, 255, 0.4);
       padding: 6px 16px;
@@ -118,198 +96,217 @@
       color: #d1563b;
       margin-bottom: 24px;
       border: 1px solid rgba(255, 255, 255, 0.6);
-      animation: fadeIn 1s ease-out;
     }
 
-    /* Título com Fonte Clássica e Imponente */
     .hero h2 {
       font-family: 'Marcellus', serif;
-      font-size: 3.8em;
+      font-size: 3.5em;
       margin: 0 0 20px 0;
-      font-weight: 400;
-      line-height: 1.1;
       color: #1a1a1a;
-      letter-spacing: 1px;
+      line-height: 1.1;
     }
 
-    /* Copywriting Profissional e Envolvente */
     .hero p {
-      font-size: 1.25em;
+      font-size: 1.2em;
       line-height: 1.6;
       margin-bottom: 35px;
       color: #4a4a4a;
-      max-width: 650px;
+      max-width: 700px;
       font-weight: 300;
     }
 
-    /* Botão de Ação Principal (Call to Action) */
     .cta-button {
       display: inline-flex;
       align-items: center;
       background: #1a1a1a;
-      color: #ffffff;
+      color: #fff;
       text-decoration: none;
       padding: 15px 35px;
       border-radius: 50px;
       font-weight: 500;
       letter-spacing: 1px;
-      font-size: 0.95em;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
-      margin-bottom: 40px;
-    }
-
-    .cta-button i {
-      margin-right: 10px;
-      font-size: 0.9em;
-      transition: transform 0.3s ease;
     }
 
     .cta-button:hover {
       background: #f26e50;
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(242, 110, 80, 0.25);
+      box-shadow: 0 12px 30px rgba(242, 110, 80, 0.2);
     }
 
-    .cta-button:hover i {
-      transform: scale(1.1);
+    /* ESTILO GERAL DAS SECÇÕES DE CONTEÚDO */
+    .content-section {
+      padding: 100px 40px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    /* Redes Sociais Centrais Estilizadas */
-    .social-icons {
-      display: flex;
-      gap: 25px;
-      margin-top: 10px;
+    .content-section:nth-child(even) {
+      background: rgba(255, 255, 255, 0.3);
     }
 
-    .social-icons a {
-      font-size: 1.4em;
-      color: #1a1a1a;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-      opacity: 0.75;
-    }
-
-    .social-icons a:hover {
-      color: #f26e50;
-      transform: translateY(-4px);
-      opacity: 1;
-    }
-
-    /* ==========================================================================
-       RODAPÉ DE ALTA GAMA (MÍNIMO E SIMÉTRICO)
-       ========================================================================== */
-    footer {
-      background: rgba(251, 251, 251, 0.7);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: #666;
-      font-size: 0.85em;
-      padding: 35px 40px;
-      border-top: 1px solid rgba(0, 0, 0, 0.04);
-    }
-
-    .footer-container {
-      max-width: 1200px;
+    .section-container {
+      max-width: 1000px;
       margin: 0 auto;
-      display: table;
-      width: 100%;
     }
 
-    .footer-column {
-      display: table-cell;
-      width: 33.333%;
-      vertical-align: middle;
+    .section-title {
+      font-family: 'Marcellus', serif;
+      font-size: 2.2em;
+      color: #1a1a1a;
+      margin-top: 0;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
     }
 
-    .footer-left { text-align: left; }
-    .footer-center { text-align: center; }
-    .footer-right { text-align: right; }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 3px;
+      background: #f26e50;
+      bottom: -8px;
+      left: 0;
+    }
 
-    /* Links do Rodapé */
-    .footer-links a {
+    /* SECÇÃO 2: SOBRE / BIOGRAFIA */
+    .bio-text {
+      font-size: 1.05em;
+      line-height: 1.8;
+      color: #444;
+      font-weight: 300;
+    }
+
+    /* SECÇÃO 3: OBRAS & PORTEFÓLIO */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .portfolio-card {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      padding: 30px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+    }
+
+    .portfolio-card i {
+      font-size: 2em;
+      color: #f26e50;
+      margin-bottom: 15px;
+    }
+
+    .portfolio-card h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.3em;
+      font-family: 'Marcellus', serif;
+    }
+
+    .portfolio-card p {
+      margin: 0;
+      font-size: 0.95em;
       color: #555;
+      line-height: 1.6;
+    }
+
+    /* SECÇÃO 4: CONTACTOS */
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      margin-top: 30px;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .contact-info p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 30px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
       text-decoration: none;
-      margin: 0 12px;
-      font-weight: 500;
+      color: #2c2c2c;
       transition: color 0.3s ease;
     }
 
-    .footer-links a:hover {
+    .contact-method:hover { color: #f26e50; }
+
+    .contact-method i {
+      font-size: 1.4em;
       color: #f26e50;
+      margin-right: 15px;
+      width: 30px;
     }
 
-    /* Redes Sociais Discretas do Rodapé */
+    /* RODAPÉ INTELIGENTE AUTOMÁTICO */
+    footer {
+      background: rgba(251, 251, 251, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #555;
+      font-size: 0.88em;
+      padding: 40px 20px;
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .footer-copyright {
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-rights {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    .footer-social {
+      margin-top: 20px;
+    }
+
     .footer-social a {
-      color: #666;
-      font-size: 1.15em;
-      margin-left: 18px;
-      text-decoration: none;
-      transition: color 0.3s ease, transform 0.3s ease;
+      color: #444;
+      font-size: 1.3em;
+      margin: 0 12px;
+      transition: all 0.3s ease;
       display: inline-block;
     }
 
     .footer-social a:hover {
       color: #f26e50;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    /* Animações */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ==========================================================================
-       RESPONSIVIDADE INTELIGENTE
-       ========================================================================== */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-      }
-
-      nav {
-        margin-top: 14px;
-      }
-
-      nav a {
-        margin: 0 10px;
-        font-size: 0.9em;
-      }
-
-      .hero {
-        padding-top: 140px;
-      }
-
-      .hero h2 {
-        font-size: 2.6em;
-      }
-
-      .hero p {
-        font-size: 1.1em;
-      }
-
-      /* Tabela do rodapé passa a blocos no telemóvel */
-      .footer-column {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      
-      .footer-right {
-        margin-bottom: 0;
-      }
-
-      .footer-social a {
-        margin: 0 12px;
-      }
-    }
-    
-    /* Botão Voltar ao Topo Minimizado */
+    /* BOTÃO VOLTAR AO TOPO */
     #backToTop {
       position: fixed;
       bottom: 30px;
@@ -336,83 +333,155 @@
       background-color: #f26e50;
       transform: translateY(-2px);
     }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 15px;
+      }
+      nav { margin-top: 15px; }
+      nav a { margin: 0 10px; font-size: 0.9em; }
+      .hero h2 { font-size: 2.4em; }
+      .hero p { font-size: 1.1em; }
+      .content-section { padding: 70px 20px; }
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- CABEÇALHO / MENU DE NAVEGAÇÃO -->
   <header>
     <h1>FTMP Composer</h1>
     <nav>
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="portfolio.html">Portfólio</a>
-      <a href="contacto.html">Contacto</a>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#obras">Obras</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
-  <main> 
-    <section id="home" class="hero">
-      <div class="hero-badge">Composição & Arranjos</div>
-      <h2>A alma da tradição em som contemporâneo.</h2>
+  <!-- CONTEÚDO PRINCIPAL (SINGLE-PAGE) -->
+  <main>
+    
+    <!-- SECÇÃO 1: INÍCIO (HERO) -->
+    <section id="inicio" class="hero">
+      <div class="hero-badge">Composição & Direção Musical</div>
+      <h2>A criação musical sem barreiras nem géneros.</h2>
       <p>
-        Fundindo as raízes e a essência da Música Tradicional com a sofisticação e precisão da escrita moderna. Sonoridades personalizadas criadas com propósito, identidade e rigor artístico.
+        Exploração artística total. Da complexidade da escrita contemporânea à sensibilidade das bandas sonoras, arranjos sob medida e direções artísticas. Música concebida para contar histórias e mover realidades.
       </p>
-      
-      <a href="portfolio.html" class="cta-button">
-        <i class="fas fa-play-circle"></i> Ouvir Portfólio
-      </a>
-      
-      <div class="social-icons">
-        <a href="https://www.youtube.com/@ftmp.composer/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#obras" class="cta-button">Explorar Obras</a>
+    </section>
+
+    <!-- SECÇÃO 2: SOBRE (BIOGRAFIA) -->
+    <section id="sobre" class="content-section">
+      <div class="section-container">
+        <h2 class="section-title">Sobre</h2>
+        <div class="bio-text">
+          <p>
+            Mover-se através do som significa não aceitar rótulos. Enquanto compositor e diretor musical, o meu trabalho foca-se na exploração exaustiva de todas as vertentes e contextos sonoros. Não sigo apenas uma linha tradicional; procuro o diálogo entre o clássico, o moderno, o experimental e o visual.
+          </p>
+          <p>
+            Com uma sólida formação e experiência técnica em arranjos complexos e direção, transformo conceitos intelectuais e narrativas emocionais em partituras estruturadas. Cada projeto é uma tela em branco onde a instrumentação é moldada para atingir o máximo impacto estético.
+          </p>
+        </div>
       </div>
     </section>
-  </main> 
-  
+
+    <!-- SECÇÃO 3: OBRAS & CONTEXTOS -->
+    <section id="obras" class="content-section">
+      <div class="section-container">
+        <h2 class="section-title">Obras & Serviços</h2>
+        <div class="portfolio-grid">
+          
+          <div class="portfolio-card">
+            <i class="fas fa-scroll"></i>
+            <h3>Composição Original</h3>
+            <p>Peças exclusivas para orquestra, música de câmara, ensembles ou solistas. Escrita de raiz adaptada ao conceito artístico desejado.</p>
+          </div>
+
+          <div class="portfolio-card">
+            <i class="fas fa-sliders-h"></i>
+            <h3>Arranjos & Orquestração</h3>
+            <p>Adaptação e reconfiguração de temas existentes para novas formações instrumentais, garantindo frescura e riqueza harmónica.</p>
+          </div>
+
+          <div class="portfolio-card">
+            <i class="fas fa-film"></i>
+            <h3>Música para Imagem</h3>
+            <p>Criação de paisagens sonoras e bandas sonoras para cinema, teatro, documentários e suportes multimédia digitais.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECÇÃO 4: CONTACTO -->
+    <section id="contacto" class="content-section">
+      <div class="section-container">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <p>Procura uma composição original, uma direção de projeto ou um arranjo personalizado? Entre em contacto para darmos início à colaboração.</p>
+            
+            <a href="mailto:ftmp.composer.2021@gmail.com" class="contact-method">
+              <i class="fas fa-envelope"></i>
+              <span>ftmp.composer.2021@gmail.com</span>
+            </a>
+            
+            <div class="contact-method">
+              <i class="fas fa-location-dot"></i>
+              <span>Coimbra, Portugal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ DE ATUALIZAÇÃO AUTOMÁTICA -->
   <footer>
-    <div class="footer-container">
-      <div class="footer-column footer-left">
-        <span>&copy; 2026 FTMP Composer. Todos os direitos reservados.</span>
-      </div>
+    <div class="footer-content">
+      <span class="footer-copyright">
+        &copy; ftmp.composer - <span id="auto-date"></span> &copy;
+      </span>
+      <span class="footer-rights">Todos os direitos reservados.</span>
       
-      <div class="footer-column footer-center">
-        <div class="footer-links">
-          <a href="index.html">Início</a>
-          <a href="sobre.html">Sobre</a>
-          <a href="portfolio.html">Portfólio</a>
-          <a href="contacto.html">Contacto</a>
-        </div>
-      </div>
-      
-      <div class="footer-column footer-right">
-        <div class="footer-social">
-          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.youtube.com/@ftmp.composer/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@ftmp.composer/" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </footer>
 
+  <!-- BOTÃO VOLTAR AO TOPO -->
   <button id="backToTop" title="Voltar ao topo"><i class="fas fa-chevron-up"></i></button>
 
+  <!-- SCRIPT PARA AUTOMAÇÃO DE DATA E SCROLL -->
   <script>
+    // Configuração da Data Automática por extenso (Ex: "junho 2026")
+    const dateSpan = document.getElementById('auto-date');
+    const options = { month: 'long', year: 'numeric' };
+    const currentData = new Date().toLocaleDateString('pt-PT', options);
+    dateSpan.textContent = currentData;
+
+    // Botão Voltar ao Topo
     const backToTopButton = document.getElementById('backToTop');
-  
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 250) {
+      if (window.scrollY > 300) {
         backToTopButton.style.opacity = '1';
         backToTopButton.style.visibility = 'visible';
       } else {
         backToTopButton.style.opacity = '0';
         backToTopButton.style.visibility = 'hidden';
       }
+    });
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 
