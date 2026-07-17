@@ -32,7 +32,7 @@
         flex-direction: column;
       }
 
-      /* CABEÇALHO ORIGINAL (MANTIDO E PROTEGIDO) */
+      /* CABEÇALHO - MANTIDO INTEGRALMENTE */
       header {
         position: fixed;
         top: 0;
@@ -47,8 +47,7 @@
         align-items: center;
         z-index: 1000;
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-        /* Garantia de que tudo fica na mesma linha */
-        flex-wrap: nowrap !important;
+        flex-wrap: nowrap;
       }
       .logo-container {
         display: flex;
@@ -96,15 +95,11 @@
         transition: all 0.3s;
         white-space: nowrap;
       }
-      .back-btn:hover {
-        color: #f26e50;
-        transform: translateX(-3px);
-      }
       .back-btn i {
         margin-right: 8px;
       }
 
-      /* CONTEÚDO (AJUSTADO PARA MOBILE) */
+      /* CONTEÚDO */
       .content {
         flex: 1;
         max-width: 1000px;
@@ -124,17 +119,16 @@
         border: 1px solid rgba(255, 255, 255, 0.5);
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
       }
-      h2 {
+
+      /* TIPOGRAFIA UNIFORMIZADA */
+      h2,
+      .card-title {
         font-family: "Marcellus", serif;
         font-size: 1.8em;
         margin: 0 0 25px 0;
       }
-      h3 {
-        font-size: 1.2em;
-        margin-bottom: 20px;
-      }
-      input,
-      textarea {
+
+      input {
         width: 100%;
         padding: 15px;
         margin-bottom: 20px;
@@ -142,6 +136,17 @@
         border-radius: 12px;
         background: #fff;
       }
+      textarea {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 25px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        background: #fff;
+        min-height: 200px;
+        resize: vertical;
+      }
+
       button {
         width: 100%;
         padding: 15px;
@@ -166,7 +171,7 @@
         border: 1px solid rgba(0, 0, 0, 0.1);
       }
 
-      /* RODAPÉ ORIGINAL (MANTIDO) */
+      /* RODAPÉ - MANTIDO INTEGRALMENTE */
       footer {
         background: rgba(251, 251, 251, 0.85);
         backdrop-filter: blur(10px);
@@ -184,7 +189,7 @@
         color: #888;
       }
 
-      /* MEDIA QUERY APENAS PARA O CORPO E GRID */
+      /* AJUSTES RESPONSIVOS */
       @media (max-width: 768px) {
         header {
           padding: 15px 20px;
@@ -226,11 +231,7 @@
               required
             />
             <input type="text" name="assunto" placeholder="Assunto" />
-            <textarea
-              name="mensagem"
-              rows="6"
-              placeholder="A sua Mensagem"
-            ></textarea>
+            <textarea name="mensagem" placeholder="A sua Mensagem"></textarea>
             <button type="submit" id="submit-btn">Enviar Mensagem</button>
             <p
               id="status"
@@ -240,21 +241,22 @@
         </section>
 
         <aside class="card">
-          <h3>Contactos</h3>
+          <h2 class="card-title">Contactos</h2>
           <div class="info-item">
             <i class="fas fa-envelope"></i> ftmp.composer.2021@gmail.com
           </div>
           <div class="info-item">
             <i class="fas fa-phone"></i> +351 925 322 133
           </div>
+          <!-- BARRA SEPARADORA COM ESPAÇAMENTO AUMENTADO -->
           <hr
             style="
-              margin: 25px 0;
+              margin: 25px 0 45px 0;
               border: 0;
-              border-top: 1px solid rgba(0, 0, 0, 0.05);
+              border-top: 2px solid #cccccc;
             "
           />
-          <h3>Localização</h3>
+          <h2 class="card-title">Localização</h2>
           <p style="font-size: 1em">Febres, Cantanhede, Portugal</p>
           <div class="map-wrapper">
             <iframe
