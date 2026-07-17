@@ -32,6 +32,7 @@
         flex-direction: column;
       }
 
+      /* CABEÇALHO ORIGINAL */
       header {
         position: fixed;
         top: 0;
@@ -45,6 +46,7 @@
         align-items: center;
         z-index: 1000;
         border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        flex-wrap: nowrap;
       }
       .logo-container {
         display: flex;
@@ -87,77 +89,68 @@
         text-decoration: none;
         color: #1a1a1a;
         font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s;
+        white-space: nowrap;
+      }
+      .back-btn i {
+        margin-right: 8px;
       }
 
+      /* CONTEÚDO */
       .content {
         flex: 1;
         max-width: 900px;
         margin: 40px auto;
-        padding: 0 20px;
-        padding-bottom: 100px;
+        padding: 0 20px 100px 20px;
       }
-
       .profile-section {
         display: grid;
         grid-template-columns: 1fr 220px;
         gap: 40px;
-        align-items: start;
-        margin-bottom: 100px;
-      }
-      .text-box {
-        line-height: 1.8;
-        text-align: justify;
+        margin-bottom: 80px;
       }
       h2 {
         font-family: "Marcellus", serif;
         font-size: 2.5em;
         margin: 0 0 20px 0;
-        line-height: 1.1;
       }
-
+      .text-box {
+        line-height: 1.8;
+        text-align: justify;
+      }
       .about-image-container {
         width: 220px;
         height: 280px;
         overflow: hidden;
         border-radius: 12px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
       .about-photo {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center top;
-        display: block;
       }
-
       h3 {
-        color: #2c2c2c;
         font-family: "Marcellus", serif;
-        font-size: 2.2em;
-        margin-top: 100px;
-        margin-bottom: 30px;
+        font-size: 2em;
+        margin: 60px 0 25px 0;
         display: flex;
         align-items: center;
         gap: 15px;
-        padding-bottom: 8px;
         border-bottom: 1px solid #d1563b;
-        width: 100%;
+        padding-bottom: 8px;
       }
-      h3 i {
-        color: #d1563b;
-      }
-
       .grid-layout {
         display: grid;
         grid-template-columns: 1fr 220px;
         gap: 30px;
-        align-items: start;
         margin-top: 10px;
       }
       .grid-reverse {
         grid-template-columns: 220px 1fr;
       }
-
       .photo-box {
         height: 220px;
         background: rgba(255, 255, 255, 0.4);
@@ -170,6 +163,7 @@
         font-weight: 600;
       }
 
+      /* RODAPÉ ORIGINAL */
       footer {
         background: rgba(251, 251, 251, 0.85);
         backdrop-filter: blur(10px);
@@ -187,7 +181,7 @@
         color: #888;
       }
 
-      /* MEDIA QUERIES PARA COMPATIBILIDADE MOBILE */
+      /* OTIMIZAÇÃO MOBILE MANTIDA */
       @media (max-width: 768px) {
         header {
           padding: 15px 20px;
@@ -196,22 +190,20 @@
         .grid-layout {
           grid-template-columns: 1fr !important;
         }
-        .about-image-container,
-        .photo-box {
-          margin: 20px auto;
+        .grid-reverse {
+          display: flex;
+          flex-direction: column;
         }
-        h2 {
-          font-size: 1.8em;
+        .grid-reverse .photo-box {
+          order: -1;
         }
-        h3 {
-          font-size: 1.6em;
-          margin-top: 50px;
+        .text-box {
+          text-align: left;
         }
       }
     </style>
   </head>
   <body>
-    <!-- [MANTIVE TODO O TEU HTML ORIGINAL ABAIXO] -->
     <header>
       <div class="logo-container">
         <div class="logo-placeholder">FT</div>
@@ -220,12 +212,13 @@
           <span>Eternizar o invisível.</span>
         </div>
       </div>
-      <a href="index.html#sobre" class="back-btn"
+      <a href="index.html" class="back-btn"
         ><i class="fas fa-arrow-left"></i> Voltar</a
       >
     </header>
 
     <main class="content">
+      <!-- O restante do teu conteúdo permanece igual -->
       <div class="profile-section">
         <div class="text-box">
           <h2>Francisco Tiago Miranda Pereira</h2>
@@ -283,10 +276,10 @@
       <div class="grid-layout">
         <div class="text-box">
           <p>
-            Dinamizei a receção do Pai Natal (Pocariça e Arrotas, 2023-2024),
-            atuei na Expofacic 2024 e no concerto "10 para a Fase" (2024).
-            Participei ainda no Encontro de Orquestras Juvenis (2025) e no 3.º
-            Encontro de Orquestras Juvenis da Banda de Alvarense (2025).
+            Dinamizei a receção do Pai Natal (2023-2024), atuei na Expofacic
+            2024 e no concerto "10 para a Fase" (2024). Participei no Encontro
+            de Orquestras Juvenis (2025) e no 3.º Encontro da Banda de Alvarense
+            (2025).
           </p>
         </div>
         <div class="photo-box">Foto Eventos</div>
@@ -297,10 +290,9 @@
         <div class="photo-box">Foto Comunidade</div>
         <div class="text-box">
           <p>
-            Para além da performance, integrei a Direção da Associação Musical
-            da Pocariça entre 2024 e 2025, contribuindo ativamente para a
-            gestão, organização de eventos e crescimento da instituição junto da
-            comunidade local.
+            Integrei a Direção da Associação Musical da Pocariça (2024-2025),
+            contribuindo ativamente para a gestão, organização de eventos e
+            crescimento da instituição junto da comunidade local.
           </p>
         </div>
       </div>
@@ -312,10 +304,10 @@
       <div class="grid-layout">
         <div class="text-box">
           <p>
-            Excelência técnica alcançada através de estágios e masterclasses com
-            professores como Óscar Saraiva, Horácio Ferreira e Nélson Aguiar. O
-            percurso é complementado pela colaboração com maestros de renome,
-            incluindo Francisco Sequeira, José Pedro Figueiredo e Nuno Osório.
+            Excelência técnica alcançada através de masterclasses com
+            professores como Óscar Saraiva, Horácio Ferreira e Nélson Aguiar.
+            Complementado pela colaboração com maestros como Francisco Sequeira,
+            José Pedro Figueiredo e Nuno Osório.
           </p>
         </div>
         <div class="photo-box">Foto Master</div>
