@@ -97,7 +97,6 @@
         padding-bottom: 100px;
       }
 
-      /* BLOCO DE PERFIL */
       .profile-section {
         display: grid;
         grid-template-columns: 1fr 220px;
@@ -114,7 +113,6 @@
         font-size: 2.5em;
         margin: 0 0 20px 0;
         line-height: 1.1;
-        white-space: nowrap;
       }
 
       .about-image-container {
@@ -132,7 +130,6 @@
         display: block;
       }
 
-      /* BARRA DE TÍTULO A OCUPAR TODA A LARGURA */
       h3 {
         color: #2c2c2c;
         font-family: "Marcellus", serif;
@@ -189,9 +186,32 @@
         font-size: 0.9em;
         color: #888;
       }
+
+      /* MEDIA QUERIES PARA COMPATIBILIDADE MOBILE */
+      @media (max-width: 768px) {
+        header {
+          padding: 15px 20px;
+        }
+        .profile-section,
+        .grid-layout {
+          grid-template-columns: 1fr !important;
+        }
+        .about-image-container,
+        .photo-box {
+          margin: 20px auto;
+        }
+        h2 {
+          font-size: 1.8em;
+        }
+        h3 {
+          font-size: 1.6em;
+          margin-top: 50px;
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- [MANTIVE TODO O TEU HTML ORIGINAL ABAIXO] -->
     <header>
       <div class="logo-container">
         <div class="logo-placeholder">FT</div>
