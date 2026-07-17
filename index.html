@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FTMP Composer — Website Oficial</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #f7a68d 0%,
+          #fcdcd0 50%,
+          #f8e1d6 100%
+        );
+        color: #2c2c2c;
+        overflow-x: hidden;
+      }
+
+      /* CABEÇALHO PREMIUM */
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        z-index: 1000;
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .logo-placeholder {
+        width: 45px;
+        height: 45px;
+        background: #1a1a1a;
+        color: #fff;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Marcellus", serif;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      .logo-titles {
+        display: flex;
+        flex-direction: column;
+      }
+      .logo-titles h1 {
+        font-family: "Marcellus", serif;
+        font-size: 1.3em;
+        margin: 0;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 1.2;
+      }
+      .logo-titles span {
+        font-size: 0.78em;
+        letter-spacing: 1px;
+        color: #d1563b;
+        font-weight: 400;
+        font-style: italic;
+      }
+
+      nav a {
+        margin-left: 25px;
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        font-size: 0.95em;
+        position: relative;
+        transition: color 0.3s;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #f26e50;
+        transition: width 0.3s;
+      }
+      nav a:hover {
+        color: #f26e50;
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
+
+      /* HERO */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 120px 24px 60px 24px;
+      }
+      .hero-badge {
+        background: rgba(255, 255, 255, 0.4);
+        padding: 6px 16px;
+        border-radius: 50px;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+        color: #d1563b;
+        margin-bottom: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+      .hero h2 {
+        font-family: "Marcellus", serif;
+        font-size: 3.5em;
+        margin: 0 0 20px 0;
+        color: #1a1a1a;
+        line-height: 1.1;
+      }
+      .hero p {
+        font-size: 1.25em;
+        line-height: 1.6;
+        margin-bottom: 35px;
+        color: #4a4a4a;
+        max-width: 700px;
+        font-weight: 300;
+      }
+      .cta-button {
+        display: inline-flex;
+        align-items: center;
+        background: #1a1a1a;
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 35px;
+        border-radius: 50px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+      .cta-button:hover {
+        background: #f26e50;
+        transform: translateY(-3px);
+      }
+
+      /* SECCÕES */
+      .content-section {
+        padding: 100px 40px;
+        background: rgba(255, 255, 255, 0.6);
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .content-section:nth-child(even) {
+        background: rgba(255, 255, 255, 0.3);
+      }
+      .section-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .section-title {
+        font-family: "Marcellus", serif;
+        font-size: 2.2em;
+        color: #1a1a1a;
+        margin-top: 0;
+        margin-bottom: 35px;
+        position: relative;
+        display: inline-block;
+      }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background: #f26e50;
+        bottom: -8px;
+        left: 0;
+      }
+
+      /* SOBRE */
+      .about-layout {
+        display: flex;
+        gap: 50px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .about-text {
+        flex: 1;
+        min-width: 300px;
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #3b3b3b;
+        font-weight: 300;
+      }
+      .about-image-container {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* FOTO OTIMIZADA */
+      .about-photo {
+        width: 100%;
+        max-width: 320px;
+        height: 460px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 20px;
+        display: block;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .secondary-button {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 20px;
+        background: transparent;
+        color: #1a1a1a;
+        border: 2px solid #1a1a1a;
+        padding: 12px 28px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95em;
+        transition: all 0.3s;
+      }
+      .secondary-button i {
+        margin-right: 8px;
+      }
+      .secondary-button:hover {
+        background: #f26e50;
+        color: #fff;
+        border-color: #f26e50;
+        transform: translateY(-2px);
+      }
+
+      /* OBRAS */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+      .portfolio-card {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 30px;
+        border-radius: 16px;
+        transition: all 0.3s;
+      }
+      .portfolio-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.9);
+      }
+      .portfolio-card i {
+        font-size: 2em;
+        color: #f26e50;
+        margin-bottom: 15px;
+      }
+      .portfolio-card h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.25em;
+        font-family: "Marcellus", serif;
+      }
+      .portfolio-card p {
+        margin: 0;
+        font-size: 0.95em;
+        color: #555;
+        line-height: 1.6;
+      }
+      .center-action {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      /* RODAPÉ */
+      footer {
+        background: rgba(251, 251, 251, 0.85);
+        backdrop-filter: blur(10px);
+        color: #555;
+        font-size: 0.88em;
+        padding: 40px 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.04);
+        text-align: center;
+      }
+      .footer-rights {
+        display: block;
+        margin-top: 6px;
+        font-size: 0.9em;
+        color: #888;
+      }
+      .footer-social {
+        margin-top: 20px;
+      }
+      .footer-social a {
+        color: #444;
+        font-size: 1.3em;
+        margin: 0 12px;
+        transition: all 0.3s;
+        display: inline-block;
+      }
+      .footer-social a:hover {
+        color: #f26e50;
+        transform: translateY(-3px);
+      }
+
+      #backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #1a1a1a;
+        color: white;
+        border: none;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        font-size: 16px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #backToTop:hover {
+        background-color: #f26e50;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          padding: 15px;
+          gap: 10px;
+        }
+        nav {
+          margin-top: 5px;
+        }
+        nav a {
+          margin: 0 8px;
+        }
+        .hero h2 {
+          font-size: 2.4em;
+        }
+        .about-layout {
+          flex-direction: column-reverse;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <div class="logo-placeholder">FT</div>
+        <div class="logo-titles">
+          <h1>FTMP Composer</h1>
+          <span>Eternizar o invisível.</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#obras">Obras</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <div class="hero-badge">Composição & Arranjos</div>
+        <h2>Música desenhada para contar histórias.</h2>
+        <p>
+          Não me prendo a géneros ou rótulos. Escrevo música com base na
+          liberdade criativa: desde a densidade de peças orquestrais até à
+          sensibilidade moderna de uma banda sonora.
+        </p>
+        <a href="#obras" class="cta-button">Ver Trabalho</a>
+      </section>
+
+      <section id="sobre" class="content-section">
+        <div class="section-container">
+          <h2 class="section-title">Sobre Mim</h2>
+          <div class="about-layout">
+            <div class="about-text">
+              <p>
+                Criar música, para mim, nunca foi uma questão de escolher um só
+                caminho. Longe de me fechar numa única gaveta ou estilo
+                tradicional, encaro a composição como um campo aberto onde tudo
+                se pode cruzar — as heranças clássicas, as texturas
+                contemporâneas e a força visual do som.
+              </p>
+              <a href="biografia.html" class="secondary-button"
+                ><i class="fas fa-book-open"></i> Ler Biografia Completa</a
+              >
+            </div>
+            <div class="about-image-container">
+              <img
+                src="ImageSite/SobreMim/FranciscoPereira_TAUC.jpg"
+                alt="Fotografia de Destaque"
+                class="about-photo"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="obras" class="content-section">
+        <div class="section-container">
+          <h2 class="section-title">O que Desenvolvo</h2>
+          <div class="portfolio-grid">
+            <div class="portfolio-card">
+              <i class="fas fa-scroll"></i>
+              <h3>Composições Originais</h3>
+              <p>
+                Peças construídas de raiz para múltiplos géneros, ensembles ou
+                orquestras.
+              </p>
+            </div>
+            <div class="portfolio-card">
+              <i class="fas fa-sliders-h"></i>
+              <h3>Arranjos & Orquestração</h3>
+              <p>
+                Adaptação de temas existentes para novas realidades
+                instrumentais.
+              </p>
+            </div>
+            <div class="portfolio-card">
+              <i class="fas fa-film"></i>
+              <h3>Música para Imagem</h3>
+              <p>
+                Bandas sonoras e ambientes imersivos para cinema e meios
+                digitais.
+              </p>
+            </div>
+            <div class="portfolio-card">
+              <i class="fas fa-guitar"></i>
+              <h3>Outros Projetos</h3>
+              <p>
+                Exploração sem barreiras: bandas e conceitos musicais
+                alternativos.
+              </p>
+            </div>
+          </div>
+          <div class="center-action">
+            <a href="repertorio.html" class="secondary-button"
+              ><i class="fas fa-music"></i> Ver Repertório Completo</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="content-section">
+        <div class="section-container" style="text-align: center">
+          <h2 class="section-title">Vamos Colaborar?</h2>
+          <p
+            style="
+              font-size: 1.15em;
+              font-weight: 300;
+              max-width: 650px;
+              margin: 0 auto 30px auto;
+              line-height: 1.7;
+            "
+          >
+            Tem um projeto em mente? Fique a par de todos os meios para falar
+            comigo diretamente.
+          </p>
+          <a href="contacto.html" class="secondary-button"
+            ><i class="fas fa-paper-plane"></i> Entrar em Contacto</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong
+          >&copy; ftmp.composer - <span id="auto-date"></span> &copy;</strong
+        >
+        <span class="footer-rights">Todos os direitos reservados.</span>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.youtube.com/@ftmp.composer/" target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <button id="backToTop" title="Voltar ao topo">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+      document.getElementById("auto-date").textContent =
+        new Date().toLocaleDateString("pt-PT", {
+          month: "long",
+          year: "numeric",
+        });
+      const btn = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          btn.style.opacity = "1";
+          btn.style.visibility = "visible";
+        } else {
+          btn.style.opacity = "0";
+          btn.style.visibility = "hidden";
+        }
+      });
+      btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

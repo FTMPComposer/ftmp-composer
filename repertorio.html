@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repertório Completo — FTMP Composer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding-top: 110px; font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #f7a68d 0%, #fcdcd0 50%, #f8e1d6 100%); color: #2c2c2c; min-height: 100vh; display: flex; flex-direction: column; }
+    
+    /* CABEÇALHO COMPLETO */
+    header { 
+      position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.85); 
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); 
+      padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; 
+      z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.4); 
+    }
+    .logo-container { display: flex; align-items: center; gap: 15px; }
+    .logo-placeholder { width: 45px; height: 45px; background: #1a1a1a; color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Marcellus', serif; font-size: 1.2em; font-weight: bold; }
+    
+    .logo-titles { display: flex; flex-direction: column; }
+    .logo-titles h1 { font-family: 'Marcellus', serif; font-size: 1.3em; margin: 0; font-weight: 400; letter-spacing: 1px; line-height: 1.2; }
+    .logo-titles span { font-size: 0.78em; letter-spacing: 1px; color: #d1563b; font-weight: 400; font-style: italic; }
+    
+    .back-btn { text-decoration: none; color: #1a1a1a; font-weight: 500; display: inline-flex; align-items: center; transition: all 0.3s; height: fit-content; padding: 5px 0; }
+    .back-btn:hover { color: #f26e50; transform: translateX(-3px); } .back-btn i { margin-right: 8px; }
+    
+    /* CONTEÚDO */
+    .content { flex: 1; max-width: 900px; margin: 40px auto; padding: 0 20px; width: 100%; }
+    h2 { font-family: 'Marcellus', serif; font-size: 2.2em; border-bottom: 2px solid #f26e50; padding-bottom: 10px; display: inline-block; margin-bottom: 30px; }
+    
+    .works-table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.6); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.5); margin-top: 20px; }
+    .works-table th, .works-table td { padding: 15px 20px; text-align: left; }
+    .works-table th { background: #1a1a1a; color: white; font-family: 'Marcellus', serif; font-weight: 400; letter-spacing: 1px; }
+    .works-table tr { border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .works-table tr:last-child { border-bottom: none; }
+    .works-table td a { color: #f26e50; text-decoration: none; font-weight: 500; }
+    .works-table td a:hover { text-decoration: underline; }
+
+    /* RODAPÉ MINIMALISTA */
+    footer { background: rgba(251, 251, 251, 0.85); backdrop-filter: blur(10px); color: #555; font-size: 0.88em; padding: 30px 20px; border-top: 1px solid rgba(0, 0, 0, 0.04); text-align: center; margin-top: auto; }
+    .footer-rights { display: block; margin-top: 6px; font-size: 0.9em; color: #888; }
+
+    @media (max-width: 768px) { header { flex-direction: column; padding: 15px; gap: 15px; text-align: center; } .logo-container { flex-direction: column; gap: 5px; } .back-btn { margin-top: 5px; } body { padding-top: 160px; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <div class="logo-placeholder">FT</div>
+      <div class="logo-titles">
+        <h1>FTMP Composer</h1>
+        <span>Eternizar o invisível.</span>
+        </div>
+    </div>
+    <a href="index.html#obras" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
+  </header>
+  
+  <main class="content">
+    <h2>Catálogo de Obras & Repertório</h2>
+    <p style="font-weight: 300;">Lista estruturada de peças originais, arranjos e colaborações musicais:</p>
+    
+    <table class="works-table">
+      <thead>
+        <tr>
+          <th>Obra / Projeto</th>
+          <th>Tipo</th>
+          <th>Ano</th>
+          <th>Registo / Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[Nome da Tua Obra 1]</td>
+          <td>Composição Original</td>
+          <td>2025</td>
+          <td><a href="#" target="_blank"><i class="fab fa-youtube"></i> Ouvir</a></td>
+        </tr>
+        <tr>
+          <td>[Nome do Teu Arranjo 2]</td>
+          <td>Arranjo & Orquestração</td>
+          <td>2026</td>
+          <td><a href="#" target="_blank"><i class="fas fa-file-pdf"></i> Partitura</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  
+  <footer>
+    <div>
+      <strong>&copy; ftmp.composer - <span id="auto-date"></span> &copy;</strong>
+      <span class="footer-rights">Todos os direitos reservados.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('auto-date').textContent = new Date().toLocaleDateString('pt-PT', { month: 'long', year: 'numeric' });
+  </script>
+</body>
+</html>

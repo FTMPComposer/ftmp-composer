@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto — FTMP Composer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding-top: 110px;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #f7a68d 0%,
+          #fcdcd0 50%,
+          #f8e1d6 100%
+        );
+        color: #2c2c2c;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* CABEÇALHO */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .logo-placeholder {
+        width: 45px;
+        height: 45px;
+        background: #1a1a1a;
+        color: #fff;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Marcellus", serif;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+      .logo-titles {
+        display: flex;
+        flex-direction: column;
+      }
+      .logo-titles h1 {
+        font-family: "Marcellus", serif;
+        font-size: 1.3em;
+        margin: 0;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 1.2;
+      }
+      .logo-titles span {
+        font-size: 0.78em;
+        letter-spacing: 1px;
+        color: #d1563b;
+        font-weight: 400;
+        font-style: italic;
+      }
+      .back-btn {
+        text-decoration: none;
+        color: #1a1a1a;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.3s;
+      }
+      .back-btn:hover {
+        color: #f26e50;
+        transform: translateX(-3px);
+      }
+      .back-btn i {
+        margin-right: 8px;
+      }
+
+      /* CONTEÚDO */
+      .content {
+        flex: 1;
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+        width: 100%;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 30px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 40px;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+      h2 {
+        font-family: "Marcellus", serif;
+        font-size: 1.8em;
+        margin: 0 0 25px 0;
+      }
+      h3 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        background: #fff;
+      }
+      button {
+        width: 100%;
+        padding: 15px;
+        background: #f26e50;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      button:disabled {
+        background: #ccc;
+      }
+      .info-item {
+        font-size: 1em;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .map-wrapper {
+        margin-top: 25px;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      /* RODAPÉ */
+      footer {
+        background: rgba(251, 251, 251, 0.85);
+        backdrop-filter: blur(10px);
+        color: #555;
+        font-size: 0.88em;
+        padding: 30px 20px;
+        border-top: 1px solid rgba(0, 0, 0, 0.04);
+        text-align: center;
+        margin-top: auto;
+      }
+      .footer-rights {
+        display: block;
+        margin-top: 6px;
+        font-size: 0.9em;
+        color: #888;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          padding: 15px;
+          gap: 15px;
+          text-align: center;
+        }
+        .logo-container {
+          flex-direction: column;
+          gap: 5px;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <div class="logo-placeholder">FT</div>
+        <div class="logo-titles">
+          <h1>FTMP Composer</h1>
+          <span>Eternizar o invisível.</span>
+        </div>
+      </div>
+      <a href="index.html" class="back-btn"
+        ><i class="fas fa-arrow-left"></i> Voltar</a
+      >
+    </header>
+
+    <main class="content">
+      <div class="contact-grid">
+        <section class="card">
+          <h2>Vamos colaborar?</h2>
+          <form
+            id="contact-form"
+            action="https://formspree.io/f/mlgyqjnw"
+            method="POST"
+          >
+            <input type="text" name="nome" placeholder="O seu Nome" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="O seu Email"
+              required
+            />
+            <input type="text" name="assunto" placeholder="Assunto" />
+            <textarea
+              name="mensagem"
+              rows="6"
+              placeholder="A sua Mensagem"
+            ></textarea>
+            <button type="submit" id="submit-btn">Enviar Mensagem</button>
+            <p
+              id="status"
+              style="
+                margin-top: 20px;
+                font-weight: 600;
+                text-align: center;
+                font-size: 0.9em;
+              "
+            ></p>
+          </form>
+        </section>
+
+        <aside class="card">
+          <h3>Contactos</h3>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i> ftmp.composer.2021@gmail.com
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i> +351 925 322 133
+          </div>
+          <hr
+            style="
+              margin: 25px 0;
+              border: 0;
+              border-top: 1px solid rgba(0, 0, 0, 0.05);
+            "
+          />
+          <h3>Localização</h3>
+          <p style="font-size: 1em">Febres, Cantanhede, Portugal</p>
+          <div class="map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48610.91395557697!2d-8.675669489194112!3d40.404816038795076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd23ae70e2201751%3A0x20d17b7eff445d89!2sFebres!5e0!3m2!1spt-PT!2spt!4v1784250936960!5m2!1spt-PT!2spt"
+              width="100%"
+              height="220"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <strong
+          >&copy; ftmp.composer - <span id="auto-date"></span> &copy;</strong
+        >
+        <span class="footer-rights">Todos os direitos reservados.</span>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("auto-date").textContent =
+        new Date().toLocaleDateString("pt-PT", {
+          month: "long",
+          year: "numeric",
+        });
+
+      const form = document.getElementById("contact-form");
+      const btn = document.getElementById("submit-btn");
+      const status = document.getElementById("status");
+      const LIMITE = 50;
+
+      function getStats() {
+        const agora = new Date();
+        const mesAno = agora.getMonth() + "-" + agora.getFullYear();
+        let stats = JSON.parse(localStorage.getItem("formStats"));
+        if (!stats || stats.mesAno !== mesAno) {
+          stats = { mesAno: mesAno, total: 0 };
+        }
+        return stats;
+      }
+
+      function updateUI() {
+        let stats = getStats();
+        if (stats.total >= LIMITE) {
+          btn.disabled = true;
+          btn.textContent = "Limite mensal atingido.";
+        }
+      }
+      updateUI();
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        let stats = getStats();
+        if (stats.total >= LIMITE) return;
+
+        const data = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          stats.total++;
+          localStorage.setItem("formStats", JSON.stringify(stats));
+          status.textContent = "Mensagem enviada com sucesso!";
+          form.reset();
+          updateUI();
+        } else {
+          status.textContent = "Erro ao enviar. Tente novamente.";
+        }
+      });
+    </script>
+  </body>
+</html>
