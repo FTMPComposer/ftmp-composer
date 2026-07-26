@@ -233,12 +233,17 @@
         color: #888;
       }
 
-      /* RESPONSIVIDADE COM FOTOS CENTRADAS */
+      /* --- RESPONSIVIDADE PARA TELEMÓVEIROS --- */
       @media (max-width: 768px) {
+        .profile-grid,
         .profile-section,
         .grid-layout {
           grid-template-columns: 1fr;
           justify-items: center;
+        }
+        .profile-grid {
+          display: flex;
+          flex-direction: column; /* Coloca a foto em cima e o texto abaixo no telemóvel, se preferires, ou remove para manter a ordem */
         }
         .grid-reverse {
           display: flex;
